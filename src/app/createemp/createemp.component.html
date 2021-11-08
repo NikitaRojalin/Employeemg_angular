@@ -1,0 +1,68 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Create Employee Form</h3>
+    <form  [formGroup]="userForm" (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label> First Name:</label>
+            <input [ngClass]="{
+                'has-error':userForm.controls.firstName.touched && userForm.controls.firstName.invalid,
+                'has-success' : userForm.controls.firstName.touched && userForm.controls.firstName.valid
+            }" type="text" class ="form-control" id = "firstName"
+                [(ngModel)] = "employee.firstName"  formControlName="firstName">
+                <span style="color:red;"
+                *ngIf="userForm.controls.firstName.touched && userForm.controls.firstName.invalid">Please Enter firstname</span>
+
+        </div>
+
+        <div class="form-group">
+            <label> Last Name:</label>
+            <input [ngClass]="{
+                'has-error':userForm.controls.lastName.touched && userForm.controls.lastName.invalid,
+                'has-success' : userForm.controls.lastName.touched && userForm.controls.lastName.valid
+            }" type="text" class ="form-control" id = "lastName"
+                [(ngModel)] = "employee.lastName" formControlName = "lastName">
+                <span style="color:red;"
+                *ngIf="userForm.controls.lastName.touched && userForm.controls.lastName.invalid">Please Enter lastname</span>
+
+        </div>
+
+        <div class="form-group">
+            <label> Email Id:</label>
+            <input [ngClass]="{
+                'has-error':userForm.controls.emailId.touched && userForm.controls.emailId.invalid,
+                'has-success' : userForm.controls.emailId.touched && userForm.controls.emailId.valid
+            }" type="text" class ="form-control" id = "emailId"
+                [(ngModel)] = "employee.emailId" formControlName = "emailId">
+                <span style="color:red;"
+                *ngIf="userForm.controls.emailId.touched && userForm.controls.emailId.invalid">Please Enter email in correct form</span>
+
+        </div>
+        <div class="form-group">
+            <label> Designation:</label>
+            <input [ngClass]="{
+                'has-error':userForm.controls.designation.touched && userForm.controls.designation.invalid,
+                'has-success' : userForm.controls.designation.touched && userForm.controls.designation.valid
+            }" type="text" class ="form-control" id = "designation"
+                [(ngModel)] = "employee.designation" formControlName = "designation">
+                <span style="color:red;"
+                *ngIf="userForm.controls.designation.touched && userForm.controls.designation.invalid">Please Enter your designation</span>
+
+        </div>
+        <div class="form-group">
+            <label> phone No.:</label>
+            <input [ngClass]="{
+                'has-error':userForm.controls.phoneno.touched && userForm.controls.phoneno.invalid,
+                'has-success' : userForm.controls.phoneno.touched && userForm.controls.phoneno.valid
+            }" type="text" class ="form-control" id = "phoneno"
+                [(ngModel)] = "employee.phoneno" formControlName = "phoneno">
+                <span style="color:red;"
+                *ngIf="userForm.controls.phoneno.touched && userForm.controls.phoneno.invalid">Please Enter a valid phone number</span>
+
+        </div>
+
+        <button class = "btn btn-success mt-3 " type ="submit">Submit</button>
+        <a routerLink="/employees" style="margin-left:20px;" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-sm mt-3 ml-3">Back</a>
+
+    </form>
+
+    </div>
